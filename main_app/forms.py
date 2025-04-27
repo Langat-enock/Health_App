@@ -1,14 +1,14 @@
 # forms.py
 
 from django import forms
-from .models import CustomUser, ClientProfile
+from .models import Doctor, ClientProfile
 
 class ClientRegistrationForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput)
     contact = forms.CharField(max_length=20)
 
     class Meta:
-        model = CustomUser
+        model = Doctor
         fields = ['username', 'email', 'password']
 
     def save(self, commit=True):
