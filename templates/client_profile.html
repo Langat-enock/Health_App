@@ -1,0 +1,11 @@
+<h2>{{ client.user.username }}</h2>
+<p>Contact: {{ client.contact }}</p>
+<p>Medical History: {{ client.medical_history }}</p>
+<h3>Enrolled Programs:</h3>
+<ul>
+  {% for enrollment in enrollments %}
+    <li>{{ enrollment.program }} (Enrolled: {{ enrollment.enrollment_date }})</li>
+  {% empty %}
+    <li>No programs enrolled.</li>
+  {% endfor %}
+</ul>
